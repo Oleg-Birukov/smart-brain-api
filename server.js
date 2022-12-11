@@ -37,8 +37,10 @@ app.get("/profile/:id", profile.handleProfileGet(db));
 app.put("/image", image.handleImage(db));
 app.post("/imageurl", image.handleImageUrl);
 
-app.listen(3000, () => {
-	console.log("app is running on port 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+	console.log(`app is running on port ${PORT}`);
 });
 
 /*
